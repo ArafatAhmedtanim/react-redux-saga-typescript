@@ -34,7 +34,9 @@ class Github extends Component<Props>{
 
     render() {
         return (<div className="main">
-            <RepositoryList {...this.props} />
+            <div className="jumbotron jumbotron-fluid">
+                <RepositoryList {...this.props} />
+            </div>
         </div>)
     }
 }

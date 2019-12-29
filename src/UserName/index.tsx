@@ -29,7 +29,9 @@ class UserName extends Component<PropsWithDispatch>{
             : null;
 
     render = () => <div className="main">
-        <UserNameInput handleSubmit={this.handleSubmit} />
+        <div className="jumbotron jumbotron-fluid">
+            <UserNameInput handleSubmit={this.handleSubmit} />
+        </div>
     </div>
 }
 

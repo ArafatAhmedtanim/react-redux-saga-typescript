@@ -18,7 +18,7 @@ class UserNameInput extends Component<Props, State> {
 
     render() {
         const { handleSubmit } = this.props
-        return (<>
+        return (
             <div className="input-group mb-3">
                 <div className="input-group-prepend">
                     <span
@@ -46,7 +46,7 @@ class UserNameInput extends Component<Props, State> {
                     </button>
                 }</div>
             </div>
-        </>)
+        )
     }
 }
 
