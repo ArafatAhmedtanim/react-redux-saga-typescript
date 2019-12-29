@@ -1,24 +1,18 @@
-/**
- * Action types
- */
 export enum UserTypes {
-    LOAD_REQUEST = '@repositories/LOAD_REQUEST',
-    LOAD_SUCCCES = '@repositories/LOAD_SUCCCES',
-    LOAD_FAILURE = '@repositories/LOAD_FAILURE'
+    SET_CURRUSER_REQUEST = '@currUser/LOAD_REQUEST',
+    SET_CURRUSER_SUCCCES = '@currUser/LOAD_SUCCCES',
+    SET_CURRUSER_FAILURE = '@currUser/LOAD_FAILURE'
 }
 
-/**
- * Data types
- */
-export interface User {
-    userName: string
+export interface CurrUser {
+    id: number,
+    login: string,
+    name: string,
+    image: string
 }
 
-/**
- * State type
- */
 export interface UserState {
-    readonly data: User
+    data?: any
     readonly loading: boolean
     readonly error: boolean
 }

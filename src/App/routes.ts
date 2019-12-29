@@ -8,12 +8,16 @@ const routes: RouteType[] = [
         name: 'github.userName',
         path: '/github/userName',
         component: UserName,
-        exact: true
+        exact: true,
+
+        type: 'global'
     }, {
         name: 'github.repos',
         path: '/github/repos',
         component: Github,
-        exact: true
+        exact: true,
+
+        type: 'private'
     }
 ];
 
@@ -30,5 +34,4 @@ function routePath(name: string, args: any = null) {
 }
 
 export default routes;
-
 export { routePath };

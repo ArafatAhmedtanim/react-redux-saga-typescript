@@ -1,17 +1,34 @@
-import React, { Component } from 'react'
-import UserNameInput from './components/UserNameInput'
+import React, { Component, useEffect } from 'react'
+import UserNameInput from './components/UserNameInputForm'
 
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 
-import { User } from './types';
 import { ApplicationState } from '../App/store';
 
-import * as RepositoriesActions from './store/ducks/repositories/actions';
-class UserName extends Component {
-    render() {
-        return <UserNameInput />
-    }
+import * as Name from './store/ducks/currUser/actions';
+
+interface DispatchProps {
+    currUserRequest(username: string): void
 }
 
-export default UserName
+type Props = {
+    currUser: string,
+    history: any
+}
+type PropsWithDispatch = Props & DispatchProps
+
+const mapStateToProps = (state: ApplicationState) => ({ currUser: state.name.data })
+const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators(Name, dispatch);
+
+class UserName extends Component<PropsWithDispatch>{
+    handleSubmit = (username: string) => this.props.currUserRequest(username)
+    componentWillReceiveProps = (nextProps: Props) =>
+        nextProps.currUser !== this.props.currUser ?
+            this.props.history.push('/github/repos')
+            : null;
+
+    render = () => <UserNameInput handleSubmit={this.handleSubmit} />
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserName);
