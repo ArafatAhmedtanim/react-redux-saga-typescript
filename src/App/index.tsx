@@ -7,6 +7,8 @@ import NavBar from './components/NavBar';
 
 import routes, { routePath } from './routes';
 
+import './../style.css';
+
 const navLinks = [
     { text: 'Github User Name', href: routePath('github.userName') },
     { text: 'Github Repos', href: routePath('github.repos') }

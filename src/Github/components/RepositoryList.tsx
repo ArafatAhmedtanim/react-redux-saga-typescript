@@ -12,7 +12,7 @@ class RepositoryList extends Component<Props> {
         const { repositories } = this.props
 
         return (
-            <ul>
+            <ul className="list-group">
                 {repositories.map(
                     repository =>
                         <RepositoryItem

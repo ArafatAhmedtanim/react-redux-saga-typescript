@@ -33,7 +33,9 @@ class Github extends Component<Props>{
     }
 
     render() {
-        return (<RepositoryList {...this.props} />)
+        return (<div className="main">
+            <RepositoryList {...this.props} />
+        </div>)
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Github);

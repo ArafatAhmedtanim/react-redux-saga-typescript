@@ -28,7 +28,9 @@ class UserName extends Component<PropsWithDispatch>{
             this.props.history.push('/github/repos')
             : null;
 
-    render = () => <UserNameInput handleSubmit={this.handleSubmit} />
+    render = () => <div className="main">
+        <UserNameInput handleSubmit={this.handleSubmit} />
+    </div>
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserName);
